@@ -1,6 +1,9 @@
 cmake_minimum_required(VERSION 3.1)
+set(CMAKE_CXX_COMPILER /usr/bin/g++-4.8)
+set(CMAKE_C_COMPILER /usr/bin/gcc-4.8)
 project(SimplePDR CXX)
 enable_language(CXX C)
+include_directories(/home/song/SimplePDR/z3-4.5.0-x64-ubuntu-14.04/include)
 
 # set the C++ standard
 set(CMAKE_CXX_STANDARD 11)
@@ -40,5 +43,6 @@ target_include_directories(SimplePDR
 						   ${CMAKE_CURRENT_BINARY_DIR})
 
 # find and link the Z3 library
-find_library(Z3_LIB z3)
+# find_library(Z3_LIB z3)
+set(Z3_LIB /home/song/SimplePDR/z3-4.5.0-x64-ubuntu-14.04/bin/libz3.so)
 target_link_libraries(SimplePDR ${Z3_LIB})
